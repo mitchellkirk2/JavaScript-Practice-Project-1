@@ -1,5 +1,13 @@
-let currentResult = 0;
+const defaultResult = 0;
+let currentResult = defaultResult;
 
-currentResult += 10;
 
-outputResult(currentResult, '');
+function add(){
+    const enteredNumber = parseInt(userInput.value);
+    const calcDescription = `${currentResult} + ${enteredNumber}`
+    currentResult = currentResult + parseInt(enteredNumber);
+    outputResult(currentResult, calcDescription);
+
+}
+
+addBtn.addEventListener('click', add);
