@@ -44,7 +44,7 @@ calculateResult(calculationType){
     createAndWriteOutput(mathOperator, initialResult, enteredNumber);
     writeToLog(calculationType, initialResult, enteredNumber, currentResult);
 }
-}
+
 
 //adds the user input to the current result
 function add(){
