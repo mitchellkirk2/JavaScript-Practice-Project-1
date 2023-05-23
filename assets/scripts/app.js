@@ -24,6 +24,28 @@ function writeToLog(operationIdentifier, prevResult, operationNumber, newResult)
     console.log(logEntries);
 }
 
+calculateResult(calculationType){
+    const enteredNumber = getUserNumberInput();
+    const initialResult = currentResult;
+    let mathOperator;
+    if(calculationType === 'ADD'){
+        currentResult += parseInt(enteredNumber);
+        mathOperator = '+';
+    } else if(calculationType === 'SUBTRACT'){
+        currentResult -= parseInt(enteredNumber);
+        mathOperator = '-';
+    } else if (calculationType === 'DIVIDE'){
+        currentResult /= parseInt(enteredNumber);
+        mathOperator = '/';
+    } else {
+        currentResult *= parseInst(enteredNumber);
+        mathOperator = '*';
+    }
+    createAndWriteOutput(mathOperator, initialResult, enteredNumber);
+    writeToLog(calculationType, initialResult, enteredNumber, currentResult);
+}
+}
+
 //adds the user input to the current result
 function add(){
     const enteredNumber = getUserNumberInput();
